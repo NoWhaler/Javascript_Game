@@ -307,4 +307,5 @@ function handleGameStatus(){
 }
 animate();
   ```
-                             
+ ## Матеріал підготував 
+* *студент групи ІВ-92 Злочевський Нікіта* - [NoWhaler](https://github.com/NoWhaler)                        
