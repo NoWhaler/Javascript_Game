@@ -52,4 +52,5 @@ canvas{
   const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
   ```
+  Таким чином, ми зберігаємо посилання на <canvas> елемент в змінної canvas. Далі ми створюємо змінну ctx для зберігання 2D візуалізації контексту - метод, який використовується для відтворення в Canvas.
 
