@@ -235,7 +235,7 @@ function handleProjectiles(){
   projectiles.splice(i, 1);
   i--;
   ```
-  Захисник також пропадає, якщо їх hp падає до 0.
+  Захисник також пропадає, якщо його hp падає до 0.
   ```js
   defenders.splice(i, 1);
   i--;
