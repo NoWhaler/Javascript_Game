@@ -43,6 +43,7 @@ canvas{
     background-size: cover;
     font-family: 'Orbitron', sans-serif;
 }```
+  
 # Основи Canvas
   
   
