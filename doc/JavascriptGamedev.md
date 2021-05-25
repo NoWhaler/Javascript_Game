@@ -56,5 +56,8 @@ const ctx = canvas.getContext('2d');
 
   Ми оновлюємо і відображаємо сцени, і потім використовуємо requestAnimationFrame для постановки в чергу наступного циклу.
   ```js
-  requestAnimationFrame(animate);
+  function animate(){
+   
+    requestAnimationFrame(animate);
+}
   ```
