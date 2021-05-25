@@ -48,5 +48,8 @@ canvas{
   
 # Основи Canvas
   Щоб мати можливість візуалізувати гру в <canvas> елементі, спочатку ми повинні отримати посилання на цей елемент в коді JavaScript. Додайте наступний код після відкриваючого тега <script>.
-  
+  ```js
+  const canvas = document.getElementById('canvas1');
+const ctx = canvas.getContext('2d');
+  ```
 
