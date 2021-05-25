@@ -62,7 +62,27 @@ const ctx = canvas.getContext('2d');
 }
   animate();
   ```
-#
+# Як створювалась гра?
+  Гра, представлена у даному проєкті є аналогом мобільної гри Plants vs Zombie.
+  Спочатку, ми розділили наше ігрове поле для розміщення об'єктів на ньому. 
+ ```js
+  class Cell{
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.width = cellSize;
+        this.height = cellSize;
+    }
+    draw(){
+        if (mouse.x && mouse.y  && collision(this, mouse)){
+            ctx.strokeStyle = 'black';
+            ctx.strokeRect(this.x, this.y, this.width, this.height)
+        }
+        
+    }
+}
+  ```
+  
 #
   
 #
