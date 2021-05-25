@@ -45,7 +45,7 @@ canvas{
 }```
   
 ## Основи Canvas
-  
+  asdasdasdsad
   
 #
 #
