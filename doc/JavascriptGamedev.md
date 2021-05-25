@@ -266,4 +266,25 @@ function handleProjectiles(){
             numberOfResources += gainedResources;
   ```
 # Ігровий статус
+ Як і в будь-якій грі, ми прийдемо до якогось результату: поразка або перемога. За певних умов ми отримаємо надпис "game over" або "You win" на нашому полотні.
+ ```js
+function handleGameStatus(){
+    ctx.fillStyle = 'gold';
+    ctx.font = '30px Orbitron';
+    ctx.fillText('Resources: ' + numberOfResources, 180, 80);
+    ctx.fillText('Score: ' + score, 180, 40);
+    if (gameOver){
+        ctx.fillStyle = 'black';
+        ctx.font = '70px Orbitron';
+        ctx.fillText('GAME OVER', 200, 300);
+    }
+    if (score >= winniningScore && enemies.length === 0){
+        ctx.fillStyle = 'black';
+        ctx.font = '70px Orbitron';
+        ctx.fillText('LEVEL COMPLETE', 130, 300);
+        ctx.font = '30px Orbitron';
+        ctx.fillText('You win with ' + score + ' points!', 134, 340);
+    }
+} 
+```
                              
