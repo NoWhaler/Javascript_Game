@@ -124,7 +124,47 @@ canvas.addEventListener('mouseleave', function(){
   Ця частина відповідає за функціональність мишки.                                     
 # Створення персонажів
   У даному контексті, ми маємо два види персонажів: захисники та вороги.
-
+```js
+class Defender{
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
+        this.width = cellSize - cellGap * 2;
+        this.height = cellSize - cellGap * 2;
+        this.shooting = false;
+        this.shootNow = false;
+        this.health = 100;
+        this.projectiles = [];
+        this.timer = 0;
+        this.frameX = 0;
+        this.frameY = 0;
+        this.spriteWidth = 256;
+        this.spriteHeight = 187;
+        this.minFrame = 0;
+        this.maxFrame = 9;
+        this.chosenDefender = chosenDefender;
+    }
+    draw(){
+        //ctx.fillStyle = 'blue';
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillStyle = 'green';
+        //ctx.font = '30px Orbitron';
+        //ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 30);
+        if (this.chosenDefender === 1){
+            ctx.drawImage(defender1, this.frameX * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        }else if(this.chosenDefender === 2){
+            ctx.drawImage(defender2, this.frameX * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        }
+       
+    }
+      ```
+  Даний class 
+  ```js
+const defender1 = new Image();
+defender1.src = 'defender1.png'
+const defender2 = new Image();
+defender2.src = 'defender2.png'
+  ```
 #
   
 #
