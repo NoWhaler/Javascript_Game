@@ -27,3 +27,19 @@
   ```
   
 Ми визначили charset, <title> і якийсь базовий CSS в заголовку. Тіло документа містить елементи <canvas> і <script> - ми будемо візуалізувати гру всередині першого і писати JavaScript код, який управляє грою, в другому. Елемент <canvas> має id рівний canvas1, який дозволяє однозначно відшукати елемент.
+
+```CSS
+  body{
+    background: black;
+}
+canvas{  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background: url('ground.png') no-repeat;
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif;
+}```
