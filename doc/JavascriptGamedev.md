@@ -95,8 +95,32 @@ function handleGameGrid(){
     }
 }
   ```
- За допомогою     
+ За допомогою цієї частини коду наше поле розділяється на деякі частини, а саме на квадрати, які будуть підсвічуватись при наведені курсору на них. 
   
+```js
+const mouse ={
+    x: 10,
+    y: 10,
+    width: 0.1,
+    height: 0.1,
+    clicked: false
+}
+canvas.addEventListener('mousedown', function(){
+    mouse.clicked = true;    
+});
+canvas.addEventListener('mouseup', function(){
+    mouse.clicked = false;    
+});
+let canvasPosition = canvas.getBoundingClientRect();
+canvas.addEventListener('mousemove', function(e){
+    mouse.x = e.x - canvasPosition.left;
+    mouse.y = e.y - canvasPosition.top;
+});
+canvas.addEventListener('mouseleave', function(){
+    mouse.x = undefined;
+    mouse.y = undefined;
+});
+                                        ```
 #
   
 #
