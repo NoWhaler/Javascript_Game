@@ -121,6 +121,7 @@ canvas.addEventListener('mouseleave', function(){
     mouse.y = undefined;
 });
   ```
+  Ця частина відповідає за функціональність мишки                                      
 #
   
 #
