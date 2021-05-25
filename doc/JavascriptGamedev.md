@@ -203,7 +203,7 @@ defender2.src = 'defender2.png'
   ```
   Потвторюємо цей фаргмент коду і для створення ворогів.
 # Снаряд та ресурси
-Як же саме відбувається колізія між ворогами та снарядами, які в них потрапляють? Наш снаряд представлений у вигляді каміння(його зображення завантажуємо за допомогою вище наведенего коду з попереднього пункту), який знімає певну кількість здоров`я персонажу. При нанесенні певного урона нашому ворогу, снаряд пропадає або, якщо виходить за межі игрового поля).
+Як же саме відбувається колізія між ворогами та снарядами, які в них потрапляють? Наш снаряд представлений у вигляді каміння(його зображення завантажуємо за допомогою вище наведенего коду з попереднього пункту), яке знімає певну кількість здоров`я персонажу. При нанесенні урона нашому ворогу, снаряд пропадає або, якщо виходить за межі игрового поля).
   ```js
 function handleProjectiles(){
     for(let i = 0; i < projectiles.length; i++){
@@ -225,7 +225,7 @@ function handleProjectiles(){
     }
 }
 ```
-  У даній грі присутні ресурси, за які можливо купувати захисників. Їх можна отримати двома способами: за вбивство ворожих персонажів або вони з'являються на полі.
+  У даній грі присутні ресурси, за які можливо купувати захисників. Вони відображені на верхній панелі нашого полотна Їх можна отримати двома способами: за вбивство ворожих персонажів або вони з'являються на полі.
   Якщо снаряд наносить фатальний урон ворогу, то ми отримаємо певну кількість ресурсів(їх кількість обмежена), а сам снаряд зникає як і ворог. Для цього використовується splice. 
   ```js
   enemies.splice(i, 1);
@@ -240,4 +240,30 @@ function handleProjectiles(){
   defenders.splice(i, 1);
   i--;
   ```
-#
+  При отримані ресурсів або при ії відсутності ми отримаємо спливаючі повідомлення. 
+  ```js
+  if (numberOfResources >= defenderCost){
+        defenders.push(new Defender(gridPositionX, gridPositionY));
+        numberOfResources -= defenderCost;
+    }else{
+        floatingMessages.push(new floatingMessage('need more resources', mouse.x, mouse.y, 15, 'red'));
+    }
+  ```
+  ```js
+   if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)){
+            numberOfResources += resources[i].amount;
+            floatingMessages.push(new floatingMessage('+' + resources[i].amount, resources[i].x, resources[i].y, 20, 'black'));
+            floatingMessages.push(new floatingMessage('+' + resources[i].amount, 430, 50, 30, 'gold'));
+            resources.splice(i, 1);
+            i--;
+        }
+  ```
+  ```js
+  if (enemies[i].health <= 0){
+            let gainedResources = enemies[i].maxHealth/14;
+            floatingMessages.push(new floatingMessage('+' + gainedResources, enemies[i].x, enemies[i].y, 30, 'black'));
+            floatingMessages.push(new floatingMessage('+' + gainedResources, 430, 50, 30, 'gold'));
+            numberOfResources += gainedResources;
+  ```
+# Ігровий статус
+                             
