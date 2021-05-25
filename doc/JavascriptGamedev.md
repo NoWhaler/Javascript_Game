@@ -157,7 +157,7 @@ class Defender{
         }
        
     }
-      ```
+   ```
   Даний class 
   ```js
 const defender1 = new Image();
