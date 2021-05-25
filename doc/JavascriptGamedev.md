@@ -44,7 +44,7 @@ canvas{
     font-family: 'Orbitron', sans-serif;
 }```
   
-# Основи Canvas
+## Основи Canvas
   
   
 #
