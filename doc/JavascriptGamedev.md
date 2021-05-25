@@ -287,4 +287,24 @@ function handleGameStatus(){
     }
 } 
 ```
+ Для того, щоб наші функції працювали, ми викликаємо їх.
+  ```js
+  function animate(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.fillStyle = 'blue';
+    //ctx.fillRect(0, 0,controlsBar.width, controlsBar.height);
+    
+    handleGameGrid();     
+    handleDefenders();
+    chooseDefender();
+    handleResources();
+    handleProjectiles();      
+    handleEnemies(); 
+    handleGameStatus();         
+    handleFloatingMessages(); 
+    frame++;
+    if (!gameOver) requestAnimationFrame(animate);
+}
+animate();
+  ```
                              
