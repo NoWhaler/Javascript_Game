@@ -42,7 +42,8 @@ canvas{
     background: url('ground.png') no-repeat;
     background-size: cover;
     font-family: 'Orbitron', sans-serif;
-}```
+}
+  ```
   У цій частині коду ми задаємо розмір нашого canvas, фон(є можливість використовувати зображення), можемо використовувати різні шрифти.
   
 # Основи Canvas
