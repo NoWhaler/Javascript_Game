@@ -202,6 +202,27 @@ const defender2 = new Image();
 defender2.src = 'defender2.png'
   ```
   Потвторюємо цей фаргмент коду і для створення ворогів.
-#
-  
+# Снаряд
+Як же саме відбувається колізія між ворогами та снарядами, які в них потрапляють? Наш снаряд представлений у вигляді каміння(його зображення завантажуємо за допомогою вище наведенего коду з попереднього пункту), який знімає певну кількість здоров`я персонажу. При нанесенні певного урона нашому ворогу, снаряд пропадає або, якщо виходить за межі игрового поля).
+  ```js
+function handleProjectiles(){
+    for(let i = 0; i < projectiles.length; i++){
+        projectiles[i].update();
+        projectiles[i].draw();
+
+        for (let j = 0; j < enemies.length; j++){
+            if (enemies[j] && projectiles[i] && collision(projectiles[i], enemies[j])){
+                enemies[j].health -= projectiles[i].power;
+                projectiles.splice(i, 1);
+                i--;
+            }
+        }
+
+        if (projectiles[i] && projectiles[i].x > canvas.width){
+            projectiles.splice(i, 1);
+            i--;            
+        }        
+    }
+}
+```
 #
